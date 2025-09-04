@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+body, html {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: auto;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: background-image 1s ease-in-out;
+  padding-bottom: 30px;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.hero-section h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero-section h2 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.hero-section h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body{
+    max-width: 768px;   /* lebar HP */
+    margin: 0 auto;     /* biar center di desktop */
+    border: 1px solid #ddd; /* opsional, biar kayak frame */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  .hero-section {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero-section h1 {
+    font-size: 42px;
+  }
+
+  .hero-section h2 {
+    font-size: 20px;
+  }
+
+  .countdown {
+    font-size: 20px;
+    padding: 10px 18px;
+  }
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.countdown {
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+.btn-open-invitation {
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-flex;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+  gap: 10px;
+}
+.invitation-for{
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}

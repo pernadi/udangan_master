@@ -1,0 +1,492 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.section-title{
+  margin-top: 15px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+  color: #5c443a;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+.hero-section h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero-section h2 {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.hero-section h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: top center;
+  }
+
+  .hero-section h1 {
+    font-size: 42px;
+  }
+
+  .hero-section h2 {
+    font-size: 20px;
+  }
+
+  .countdown {
+    font-size: 20px;
+    padding: 10px 18px;
+  }
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.diagonal-text{
+  font-size: 32px;
+  color: #fff;
+  top: 50px;
+}
+
+.text-holy{
+    font-family: san-serif;
+}
+
+.countdown-wrapper {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 70px;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.countdown-card span {
+  font-size: 32px;
+  font-weight: bold;
+  display: block;
+}
+
+.countdown-card p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .countdown-card {
+    min-width: 60px;
+    padding: 12px 16px;
+  }
+
+  .countdown-card span {
+    font-size: 24px;
+  }
+
+  .countdown-card p {
+    font-size: 14px;
+  }
+}
+
+.person-card {
+  text-align: center;
+  margin: 20px;
+  color: #fff;
+}
+
+.bride-section{
+    margin-top: 30px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    overflow: hidden;
+}
+
+.photo-circle {
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.person-card h4 {
+  margin-top: 15px;
+  font-size: 32px;
+  font-family: 'Great Vibes', cursive;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .photo-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .person-card h4 {
+    font-size: 18px;
+  }
+}
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-image: url('../page_bg/bg_bride_section.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.photo-frame {
+  position: relative;
+  display: inline-block;
+  padding: 50px;
+}
+
+.photo-name {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #333;
+  background: rgba(255,255,255,0.8);
+  padding: 4px 10px;
+  border-radius: 8px;
+  z-index: 5; /* pastikan lebih tinggi dari frame */
+}
+
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  top: 190px;
+  left: 0;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  border: 4px solid #fff;
+  border-radius: 100px 100px 14px 14px; /* atas curve, bawah tetap */
+  background: linear-gradient(125deg, #ffffff, #ffffff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.photo-frame img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.photo-frame p{
+  height: auto;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 2;
+ 
+}
+
+.nama {
+  margin-top: 15px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: #5c443a;
+}
+
+.bride-title{
+  margin-top: 15px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #5c443a;
+}
+
+.desc-bride-text{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Galery css */
+
+.galery-section{
+    margin-top: 50px;
+    background-color: #ffffff;
+}
+
+.galery-sec{
+  opacity: 1;
+  background-image: url('../page_bg/bingkai-gallery.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background: #fff;
+      padding: 10px 0;
+    }
+
+    .marquee img {
+        margin: 0 20px;
+        display: inline-block;
+        animation: slide 20s linear infinite;
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 100px 100px 100px 100px; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        position: relative;
+        z-index: 2;
+    } */
+
+.photo-marquee {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.photo-track {
+  display: inline-flex;
+  gap: 20px;
+}
+
+.photo-track img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 100px 100px 100px 100px; /* atas curve, bawah tetap */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.5s ease;
+  filter: blur(4px);
+  flex-shrink: 0;
+}
+
+.photo-track img.highlight {
+  filter: blur(0);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* setengah dari total track */
+}
+
+/* reseption section */
+.reseption-section{
+  height: auto;
+  padding-bottom: 24px;
+  background-image: url('../images/wedding_header.avif');
+  margin-top: 50px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.card-reseption{
+  width: 20px;
+  height: auto;
+  padding: 50px;
+  align-items: self-start;
+  margin-top: 10px;
+  background-color: rgb(211, 245, 233);
+  border-radius: 1000px 1000px 14px 14px; /* atas curve, bawah tetap */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-reseption-2{
+  width: 20px;
+  height: auto;
+  padding: 50px;
+  align-items: self-start;
+  margin-top: 10px;
+  background-color: rgb(211, 245, 233);
+  border-radius: 1000px 1000px 14px 14px; /* atas curve, bawah tetap */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .card-reseption-2{
+    width: 20px;
+    height: auto;
+    padding: 50px;
+    align-items: self-start;
+    margin-top: 10px;
+    background-color: rgb(211, 245, 233);
+    border-radius: 14px 14px 1000px 1000px; /* atas curve, bawah tetap */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  .photo-frame::after {
+    content: "";
+    position: absolute;
+    top: 190px;
+    width: 100%;
+    height: 500px;
+    border: 4px solid #fff;
+    border-radius: 100px 100px 14px 14px; /* atas curve, bawah tetap */
+    background: linear-gradient(125deg, #ffffff, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+}
+
+.worship-text{
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+}
+
+.icon{
+  width: 50px;
+  height: 50px;
+}
+
+.line{
+  border: none; 
+  height: 2px; 
+  background: #2f2b2b; 
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  opacity: 0.5;
+}
+.text-style{
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+}
+
+.text-date{
+  font-family: 'Great Vibes', cursive;
+  font-size: 72px;
+}
+
+.btn-open-location {
+  width: 200px;
+  margin-top: 30px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #2a2929;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
