@@ -95,3 +95,26 @@ updateCountdown();
 
   document.querySelectorAll(".bride-section, .galery-section, .reseption-section, .wishes-section, .gift-section, .footer").forEach(el => observer.observe(el));
 });
+
+
+function copyNumber1() {
+      const number = document.getElementById("account-number-bank1").innerText;
+      navigator.clipboard.writeText(number)
+        .then(() => {
+          alert("Nomor berhasil disalin: " + number);
+        })
+        .catch(err => {
+          console.error("Gagal menyalin: ", err);
+        });
+    }
+
+function copyNumber2() {
+      const number = document.getElementById("account-number-bank2").innerText;
+      navigator.clipboard.writeText(number)
+        .then(() => {
+          alert("Nomor berhasil disalin: " + number);
+        })
+        .catch(err => {
+          console.error("Gagal menyalin: ", err);
+        });
+    }
