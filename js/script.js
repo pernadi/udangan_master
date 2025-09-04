@@ -45,3 +45,11 @@ const boxes = document.querySelectorAll('.hero-section');
   }, { threshold: 0.2 }); // threshold 0.2 = 20% elemen terlihat
 
   boxes.forEach(box => observer.observe(box));
+
+
+    // Ambil query parameter dari URL
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("kepada") || "Tamu Undangan";
+
+    // Tampilkan di elemen HTML
+    document.getElementById("guestName").textContent = nama;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirim Undangan via WhatsApp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4">Form Kirim Undangan WhatsApp</h2>
+    <form id="waForm" class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label for="nomor" class="form-label">Nomor WhatsApp Tujuan</label>
+        <input type="text" id="nomor" class="form-control" placeholder="Contoh: 081234567890" required>
+      </div>
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Tamu</label>
+        <input type="text" id="nama" class="form-control" placeholder="Nama Tamu" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">
+        <i class="fa fa-paper-plane"></i> Kirim ke WhatsApp
+      </button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("waForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let nomorTujuan = document.getElementById("nomor").value.trim();
+      const nama = document.getElementById("nama").value.trim();
+
+      if (!nomorTujuan || !nama) {
+        alert("Isi nomor WhatsApp dan nama tamu!");
+        return;
+      }
+
+      // Validasi nomor: kalau mulai dari 0 → ubah ke 62
+      if (nomorTujuan.startsWith("0")) {
+        nomorTujuan = "62" + nomorTujuan.substring(1);
+      }
+
+      // Hapus simbol selain angka (biar aman)
+      nomorTujuan = nomorTujuan.replace(/[^0-9]/g, "");
+
+      // Isi pesan undangan
+      const teks = `
+Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu,  Sahabat dan Rekan untuk menghadiri acara pernikahan kami.
+Berikut link undangan kami, untuk info lengkap dari acara, bisa kunjungi:
+
+        https://pernadi.github.io/udangan_master/index.html?kepada=${encodeURIComponent(nama)}
+
+Merupakan suatu kebahagiaan bagi kami apabila Sahabat dan Rekan berkenan untuk hadir dan memberikan doa restu.
+Terima Kasih
+Hormat kami,
+C. Pdt. Salmandani Lambok Panjaitan. S. Th & Elga Tri Rahelia Manurung, S.Pd
+      `;
+
+      // Encode biar aman dikirim ke WA
+      const url = `https://wa.me/${nomorTujuan}?text=${encodeURIComponent(teks)}`;
+      window.open(url, "_blank");
+    });
+  </script>
+
+  <!-- Font Awesome buat ikon -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
