@@ -1,3 +1,14 @@
+const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length > 0 && navEntries[0].type === "reload") {
+    window.location.replace("index.html");
+  }
+
+  // Cegah user kembali ke halaman ini
+  window.history.pushState(null, "", window.location.href);
+  window.onpopstate = function () {
+    window.location.replace("index.html");
+  };
+
 // Daftar gambar background
 const backgrounds = [
   'images/beranda_foto_1.JPG',
