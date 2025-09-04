@@ -1,8 +1,8 @@
 // Daftar gambar background
 const backgrounds = [
-  'images/beranda_foto_1.jpg',
-  'images/beranda_foto_2.jpg',
-  'images/beranda_foto_3.jpg',
+  'images/beranda_foto_1.JPG',
+  'images/beranda_foto_2.JPG',
+  'images/beranda_foto_3.JPG',
 ];
 
 
