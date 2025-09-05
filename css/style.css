@@ -21,17 +21,15 @@ body.fade-out {
 
 /* Hero Section */
 .hero-section {
-  min-height: auto;
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  transition: background-image 1s ease-in-out;
-  padding-bottom: 30px;
+  flex-direction: column; /* kolom atas & bawah */
+  justify-content: space-between; /* jarakkan ke atas & bawah */
+  padding: 40px 20px;
 }
 
 .hero-section .overlay {
@@ -49,24 +47,35 @@ body.fade-out {
   z-index: 2;
   text-align: center;
   color: #fff;
-  padding: 0 20px;
   animation: fadeIn 2s ease forwards;
   opacity: 0;
 }
 
-.hero-section h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 64px;
-  margin-bottom: 20px;
-}
-
-.hero-section h2 {
-  font-size: 28px;
+.hero-top h6 {
+  margin: 0;
   font-weight: 300;
 }
 
-.hero-section h3 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.hero-top h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin: 10px 0;
+}
+
+.hero-bottom h6 {
+  margin: 4px 0;
+  font-weight: 300;
+}
+
+.invitation-for {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 10px 0 20px;
+}
+
+.hero-bottom h3 {
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Responsive */
@@ -138,5 +147,5 @@ body.fade-out {
 }
 .invitation-for{
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 30px;
 }
